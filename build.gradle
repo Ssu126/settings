@@ -19,9 +19,6 @@ spotless {
     java {
         target 'src/**/*.java'
         googleJavaFormat('1.28.0')
-        //removeUnusedImports()
-        //trimTrailingWhitespace()
-        //endWithNewline()
     }
 }
 
@@ -30,6 +27,11 @@ repositories {
 }
 
 dependencies {
+    implementation 'com.querydsl:querydsl-jpa:5.1.0:jakarta'
+    annotationProcessor "com.querydsl:querydsl-apt:5.1.0:jakarta"
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+    
     implementation 'org.springframework.boot:spring-boot-h2console'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-batch'
